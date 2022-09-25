@@ -1,0 +1,139 @@
+@import 'navbar';
+@import 'colors';
+@import 'media-queries';
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Abril Fatface', cursive;
+}
+
+body{
+    background-color: $secondary;
+}
+
+.hero{
+    background-color: $terceary;
+    border-radius: 5px;
+    margin: 2px 10px;
+
+    .hero_container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+        height: 85vh;
+        z-index: 1;
+        width: 100%;
+        max-width: 1200px;
+        padding-right: 24px;
+        padding-left: 24px;
+
+        @include tablet{
+            grid-template-columns: 1fr;
+            height: 100%;
+        }
+
+        .hero_container_left{
+            width: 100%;
+            line-height: 1.2;
+
+            @include tablet{
+                padding: 5rem 0;
+            }
+
+            @include mobile{
+                line-height: 1.5;
+            }
+        }
+
+        .hero_container_left h1{
+            font-size: 4rem;
+            color: $secondary;
+            text-shadow: 4px 4px #351d452d;
+
+            @include mobile{
+                font-size: 1.5rem;
+            }
+        }
+
+        .hero_container_left h2{
+            font-size: 3rem;
+            color: $primary;
+            text-shadow: 3px 3px #351d452d;
+
+            @include mobile{
+                font-size: 2rem;
+            }
+        }
+
+        .hero_container_left p{
+            font-size: 2rem;
+            color: $dark;
+            margin-top: 1rem;
+            text-shadow: 3px 18px #351d452d;
+
+            @include mobile{
+                font-size: 1rem;
+            }
+        }
+
+        .hero_container_btn{
+            font-size: 1rem;
+            background-color: $primary;
+            padding: 14px 32px;
+            border: none;
+            border-radius: 4px;
+            color: $light;
+            margin-top: 2rem;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            outline: none;
+        }
+
+        .hero_container_input{
+            padding: 12px 64px;
+            font-size: 1rem;
+            border-radius: 4px;
+            border: solid 2px $dark
+        }
+
+        .hero_container_btn a{
+            position: relative;
+            z-index: 2;
+            color: $light;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-family: 'Pacifico', cursive;
+            font-size: 0.8rem;
+        }
+
+        &_btn:after{
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 0;
+            height: 100%;
+            background: $secondary;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        &_btn:hover:after{
+            width: 100%;
+        }
+
+        .hero_container_right{
+            text-align: center;
+
+        }
+
+        .hero_container_img{
+            width: 100%;
+        }
+    }
+}
